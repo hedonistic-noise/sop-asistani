@@ -34,10 +34,10 @@ with col1:
     key_achievements = st.text_area("Key Achievements & Projects", placeholder="e.g. Won a hackathon, published a paper, IELTS 7.5...", height=100)
     future_goals = st.text_input("Future Career Goals", placeholder="e.g. Become an AI specialist in the automotive sector.")
     
-    generate_btn = st.button("🚀 Generate SOP", type="primary", use_container_width=True)
+    generate_btn = st.button("Generate SOP", type="primary", use_container_width=True)
 
 with col2:
-    st.subheader("📄 Your Professional Letter")
+    st.subheader("📄 Your SOP Letter")
     
     if generate_btn:
         if not api_key:
@@ -82,7 +82,7 @@ with col2:
                     response = model.generate_content(user_prompt)
                     
                 # OUTPUT
-                st.success("✅ Letter Generated Successfully!")
+                st.success("Letter Generated Successfully!")
                 st.markdown(response.text)
                 st.caption("You can copy this text into your Word document.")
                 
@@ -91,4 +91,5 @@ with col2:
 
 # --- FOOTER ---
 st.markdown("---")
-st.markdown("Developed by **World Intelligence Encyclopedia Founder** | Powered by Gemini AI")
+st.markdown("Developed by **World Intelligence Encyclopedia Founder**")
+

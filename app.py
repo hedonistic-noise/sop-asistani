@@ -4,16 +4,27 @@ import os
 
 # --- PAGE CONFIGURATION ---
 st.set_page_config(
-    page_title="SOP Consultant",
+    page_title="AI SOP Consultant",
     page_icon="🎓",
     layout="wide"
 )
 
+# --- CSS HACK (GİZLİLİK MODU) ---
+# Bu kısım Streamlit ve Google yazılarını gizler, uygulamayı profesyonel gösterir.
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 # --- SIDEBAR (SETTINGS) ---
 with st.sidebar:
     st.image("https://cdn-icons-png.flaticon.com/512/2991/2991148.png", width=100)
-    st.title("Settings")
-    st.markdown("Powered by **Google Gemini 2.5**")
+    st.title("Admin Panel")
+    # "Powered by" yazısı kaldırıldı.
     st.divider()
     st.info("💡 **Tip:** Mention specific challenges overcome in the 'Key Achievements' section to make the letter more personal.")
     st.markdown("---")
@@ -27,7 +38,7 @@ st.markdown("---")
 col1, col2 = st.columns(2)
 
 with col1:
-    st.subheader("📝 Applicant Details")
+    st.subheader("Applicant Details")
     target_program = st.text_input("Target University & Program", placeholder="e.g. TU Munich, MSc Data Science")
     user_background = st.text_area("Academic & Professional Background", placeholder="e.g. Graduated from Munich Tech (GPA 3.2), 2 years Python dev experience...", height=150)
     key_achievements = st.text_area("Key Achievements & Projects", placeholder="e.g. Won a hackathon, published a paper, IELTS 7.5...", height=100)
@@ -36,7 +47,7 @@ with col1:
     generate_btn = st.button("Generate SOP", type="primary", use_container_width=True)
 
 with col2:
-    st.subheader("📄 Your Letter")
+    st.subheader("Your Letter")
     
     if generate_btn:
         # API KEY AUTOMATICALLY FETCHED FROM SECRETS
@@ -95,4 +106,5 @@ with col2:
 
 # --- FOOTER ---
 st.markdown("---")
+# Buradaki "Powered by Gemini" yazısı da kaldırıldı.
 st.markdown("Developed by **World Intelligence Encyclopedia Founder**")

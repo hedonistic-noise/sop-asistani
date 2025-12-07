@@ -21,7 +21,7 @@ with st.sidebar:
     st.info("💡 **Tip:** Mention specific challenges overcome in the 'Key Achievements' section to make the letter more personal.")
 
 # --- MAIN CONTENT ---
-st.title("🎓 AI Statement of Purpose (SOP) Specialist")
+st.title("Statement of Purpose (SOP) Specialist")
 st.markdown("Generate a highly persuasive, Ivy League-standard Statement of Purpose in seconds.")
 st.markdown("---")
 
@@ -30,7 +30,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader("📝 Applicant Details")
     target_program = st.text_input("Target University & Program", placeholder="e.g. TU Munich, MSc Data Science")
-    user_background = st.text_area("Academic & Professional Background", placeholder="e.g. Graduated from Yildiz Tech (GPA 3.2), 2 years Python dev experience...", height=150)
+    user_background = st.text_area("Academic & Professional Background", placeholder="e.g. Graduated from Munich Tech (GPA 3.2), 2 years Python dev experience...", height=150)
     key_achievements = st.text_area("Key Achievements & Projects", placeholder="e.g. Won a hackathon, published a paper, IELTS 7.5...", height=100)
     future_goals = st.text_input("Future Career Goals", placeholder="e.g. Become an AI specialist in the automotive sector.")
     
@@ -92,4 +92,5 @@ with col2:
 # --- FOOTER ---
 st.markdown("---")
 st.markdown("Developed by **World Intelligence Encyclopedia Founder**")
+
 
